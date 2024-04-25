@@ -39,13 +39,22 @@ bool readFromFile(string filename) {
     }
 
     while (inFile >> word) {
-        wordCount++;
-        charCount += word.size(); // Add the size of the current word to charCount
+        bool containsLetter = false;
+        for (char c : word) {
+            if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
+                charCount++; // Count only if it's an alphabetic character
+                containsLetter = true;
+            }
+        }
+        if (containsLetter) {
+            wordCount++; // Only count words with at least one letter
+        }
     }
 
     cout << "Word count: " << wordCount << endl;
     cout << "Character count: " << charCount << endl;
 
     inFile.close();
-    return true;  
+    return true;
 }
+
