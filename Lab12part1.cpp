@@ -70,7 +70,9 @@ bool readFromCSVFile(string filename) {
 		return false;
 	}
 
-	while (true) { 
+
+
+	while (true) {
 		getline(inFile, movieInfo);
 		if (inFile.fail()) break;
 		thisLine.clear();
