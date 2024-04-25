@@ -47,5 +47,5 @@ bool readFromFile(string filename) {
     cout << "Character count: " << charCount << endl;
 
     inFile.close();
-    return true;
+    return true;  
 }
